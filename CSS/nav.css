@@ -1,6 +1,7 @@
 #nav_body {
     height: 15vh;
-    
+    display:grid;
+    grid-template-columns: 25% 75%;
 }
 
 #img_body{
@@ -8,18 +9,26 @@
     width: auto;
     padding-top: 1rem;
     padding-left: 3rem;
-    background-color: rgb(91, 17, 219);
+    
 }
 
 #nav_body_ul{
     display: inline-block;
     list-style: none;
-    background-color: rgb(206, 206, 132);
+    
 }
 #nav_body li{
     display: inline-block;
+    padding-top: 1.25rem;
     padding-right:5vw;
-    color: white;
-    font-size: 1.2rem;
     
+    
+}
+
+
+.link_class{
+    color: black;
+    font-size: large;
+    font-weight: bolder;
+    text-decoration: none;
 }
