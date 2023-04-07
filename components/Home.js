@@ -1,10 +1,10 @@
 import React from "react";
-
+import "../CSS/home.css"
 const Home=()=>{
 
 return (
 
-    <div>
+    <div id="home_body">
         Home Component
     </div>
 )
