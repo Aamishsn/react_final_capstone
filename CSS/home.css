@@ -1,4 +1,98 @@
 #home_body {
-    height: 100vh;
-    background-color: rgb(222, 39, 39);
+    background-color: rgb(255, 255, 255);
+    display: -ms-grid;
+    grid-template-columns: 1fr;
+}
+#home_main{
+    display: grid;
+    grid-template-rows: 3fr 1fr 3fr;
+}
+#h_1{
+    display: grid;
+    grid-template-rows: 6fr 1fr;
+}
+#h_11{
+    background-color: #3d4a45;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+}
+#h_112{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#h_12_img{
+    height: 30vw;
+    width: 25vw;
+    border-radius: 16px;
+    position: relative;
+    top: 5vw;
+    z-index: 99;
+}
+#h_11_text1{
+    font-size: 5vw;
+    font-family: 'Markazi';
+    font-weight: bold;
+    color: #F4CE14;
+    margin-left: 8vw;
+    line-height: 0;
+    margin-bottom: 0;
+    
+}
+
+#h_11_text2{
+    font-size: 3.5vw;
+    font-family: 'Markazi';
+    font-weight: normal;
+    color: #ffffff;
+    margin-left: 8vw;
+    line-height: 0;
+}
+#h_11_text3{
+    font-size: 1.5vw;
+    font-family: 'Markazi';
+    font-weight: normal;
+    color: #ffffff;
+    margin-left: 8vw;
+    
+}
+
+#h_11_button{
+    background-color: #F4CE14;
+    border-radius: 16px;
+    margin-left: 8vw;
+    width: 15vw;
+    height: 3rem;
+    font-size: 1.5vw;
+    font-family: 'Markazi';
+    font-weight: bold;
+    line-height: 0;
+    
+}
+#h_2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+#h_2_text{
+    font-size: 4vw;
+    font-family: 'Markazi';
+    font-weight: bold;
+    color: black;
+    margin-left: 8vw;
+}
+#h_2_button{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#h_3_grid{
+    display: grid;
+    grid-template-columns: 25vw 25vw 25vw;
+    grid-gap: 50px;
+    height: 100%;
+   
+    justify-content: center;
+    align-content: center;
 }

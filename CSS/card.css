@@ -1,0 +1,43 @@
+#card_grid{
+    display: grid;
+    grid-template-rows: 15vw 5vw 10vw 5vw;
+    row-gap: 1vw;
+    background-color: #a4b5bc;
+    height: 95%;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+#card_img{
+    height: 15vw;
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+#card_text1{
+    color: black;
+    font-size: 1.5vw;
+    font-family: 'Kerla';
+    padding-left: 1vw;
+}
+
+#card_text2{
+    color: red;
+    font-size: 1.5vw;
+    font-family: 'Kerla';
+    padding-left: 5vw;
+}
+
+#card_text3{
+    color: #3d4a45;
+    font-size: 1.5vw;
+    font-family: 'Kerla';
+    padding-left: 1vw;
+}
+
+#card_text4{
+    color: black;
+    font-size: 1vw;
+    font-family: 'Kerla';
+    padding-left: 1vw;
+}
