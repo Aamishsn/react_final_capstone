@@ -47,7 +47,7 @@ const Home=()=>{
 
 return (
 
-    <div id="home_body">
+    <div>
         <div id="home_main">
         <div id="h_1" >
             <div id="h_11">
@@ -61,7 +61,7 @@ return (
                     <p id="h_11_text3">
                         We are a family owned <br/> Meditranian Resturant, <br/> focused on traditional <br/> recipies served with a modern <br/> twist.
                     </p>
-                    <Link to="/table" className="link_class"><button id="h_11_button">Reserve a Table</button></Link>
+                    <Link to="/booking_table" className="link_class"><button id="h_11_button">Reserve a Table</button></Link>
                     
                 </div>
 

@@ -24,7 +24,7 @@ return (
             <Link to="/" className="link_class">Menu</Link>
             </li>
             <li>
-            <Link to="/table" className="link_class">Reservations</Link>
+            <Link to="/booking_table" className="link_class">Reservations</Link>
             </li>
             <li>
             <Link to="/" className="link_class">Order Online</Link>

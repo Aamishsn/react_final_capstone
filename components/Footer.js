@@ -13,7 +13,6 @@ return (
         </div>
         <div id="center_div">
         <div></div>
-        <div></div>
         <div>
         <ul className="ul_body">
             <li>
@@ -31,7 +30,7 @@ return (
         <div>
         <ul className="ul_body">
             <li>
-            <Link to="/table" className="link_class_f">Reservations</Link>
+            <Link to="/booking_table" className="link_class_f">Reservations</Link>
             </li>
             <li>
             <Link to="/" className="link_class_f">Order Online</Link>

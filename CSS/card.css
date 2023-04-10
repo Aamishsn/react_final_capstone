@@ -19,6 +19,7 @@
     font-size: 1.5vw;
     font-family: 'Kerla';
     padding-left: 1vw;
+    font-weight: bold;
 }
 
 #card_text2{
@@ -36,8 +37,9 @@
 }
 
 #card_text4{
+    line-height: 0;
     color: black;
-    font-size: 1vw;
+    font-size: 1.2vw;
     font-family: 'Kerla';
     padding-left: 1vw;
 }
