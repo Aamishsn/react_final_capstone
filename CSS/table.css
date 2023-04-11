@@ -2,14 +2,17 @@
     display: grid;
     grid-template-rows: 1fr;
     height: 50vw;
-    background-color: #ffffff;
     justify-content: center;
     font-family: 'Mezaraki';
     font-size: 1.5vw;
+    
+    
 }
 
 #table_text1{
     font-family: 'Mezaraki';
     font-size: 4vw;
+    
+    
 }
 

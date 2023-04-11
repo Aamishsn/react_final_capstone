@@ -3,8 +3,8 @@ import './App.css';
 import Navbar from './components/Navbar';
 import { Route,Routes}  from 'react-router-dom';
 import Home from './components/Home';
-import Table from './components/Table';
-import BookingPage from './components/BookigPage';
+
+import BookingPage from './components/BookingPage';
 import Confirmation_msg from './components/Confirmation_msg';
 import Footer from './components/Footer';
 
