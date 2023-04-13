@@ -35,6 +35,7 @@ const Home = () => {
   const mealCard = mealData.map((item) => {
     return (
       <Card
+        key={item.title}
         title={item.title}
         image={item.img}
         price={item.price}

@@ -1,9 +1,9 @@
 #nav_body {
-
     display:grid;
     grid-template-columns: 1.5fr 3fr;
     font-family: 'Karla' ;
 }
+
 .img_div{
     display: flex;
     justify-content: center;
@@ -19,13 +19,20 @@
     display: inline-block;
     list-style: none;
 }
+
 #nav_body li{
     display: inline-block;
     padding-right: 4vw;
 }
+
 .link_class{
     color: black;
     font-size: 1.5vw;
     font-weight: bolder;
     text-decoration: none;
+}
+
+.link_class:hover{
+    text-decoration: underline;
+    font-size: 1.65vw;
 }

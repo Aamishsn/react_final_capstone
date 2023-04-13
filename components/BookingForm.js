@@ -1,20 +1,38 @@
 import React from "react";
+import "../CSS/table.css";
+import { useState } from "react";
 
 const BookingForm = () => {
+  const [name, setName] = useState("");
+  const [ip_email, setEmail] = useState("");
+  const [ip_date, setDate] = useState("");
+  const [valDate, setValDate] = useState(false);
+
+  const onCHange_name = (e) => {
+    setName(e.target.value);
+    const isName = e.target.value.length > 3 ? true : false;
+  };
+
+  const onChange_email = (e) => {
+    setEmail(e.target.value);
+    const isEmail =
+      e.target.value.length > 9 &&
+      e.target.value.indexOf("@") > 1 &&
+      e.target.value.indexOf(".com") > 1
+        ? true
+        : false;
+  };
+
+  const dateChangeHandler = (e) => {
+    setDate(e.target.value);
+    const isDate = Date.parse(e.target.value) > 0 ? true : false;
+    setValDate(isDate);
+  };
+
   return (
     <>
-      <div
-        style={{
-          backgroundColor: "#F4CE14",
-          width: "40vw",
-          display: "grid",
-          gridTemplateColumns: "1fr",
-          justifyItems: "center",
-          marginTop: "10px",
-          borderRadius: "16px",
-        }}
-      >
-        <h1>Reserve a Table</h1>
+      <div id="res_main">
+        <h1>BOOK NOW</h1>
 
         <form
           style={{
@@ -24,6 +42,30 @@ const BookingForm = () => {
             width: "35vw",
           }}
         >
+          <label htmlFor="res-name" style={{ fontWeight: "bold" }}>
+            {" "}
+            Name:{" "}
+          </label>
+          <input
+            type="text"
+            id="res-name"
+            className="res_ip"
+            onChange={onCHange_name}
+            value={name}
+          />
+
+          <label htmlFor="res-email" style={{ fontWeight: "bold" }}>
+            {" "}
+            Email:{" "}
+          </label>
+          <input
+            type="email"
+            id="res-email"
+            className="res_ip"
+            onChange={onChange_email}
+            value={ip_email}
+          />
+
           <label htmlFor="res-date" style={{ fontWeight: "bold" }}>
             {" "}
             Date:{" "}
@@ -31,28 +73,14 @@ const BookingForm = () => {
           <input
             type="date"
             id="res-date"
-            style={{
-              height: "3vw",
-              borderRadius: "10px",
-              border: "3px solid black",
-              paddingLeft: "15px",
-              fontWeight: "bolder",
-            }}
+            className="res_ip"
+            onChange={dateChangeHandler}
           />
 
           <label htmlFor="res-time" style={{ fontWeight: "bold" }}>
-            Choose time
+            Choose time:
           </label>
-          <select
-            id="res-time "
-            style={{
-              height: "3vw",
-              borderRadius: "10px",
-              border: "3px solid black",
-              paddingLeft: "15px",
-              fontWeight: "bolder",
-            }}
-          >
+          <select id="res-time " className="res_ip" disabled={!valDate}>
             <option>17:00</option>
             <option>18:00</option>
             <option>19:00</option>
@@ -70,28 +98,13 @@ const BookingForm = () => {
             min="1"
             max="10"
             id="guests"
-            style={{
-              height: "3vw",
-              borderRadius: "10px",
-              border: "3px solid black",
-              paddingLeft: "15px",
-              fontWeight: "bolder",
-            }}
+            className="res_ip"
           ></input>
 
           <label htmlFor="occasion" style={{ fontWeight: "bold" }}>
             Occasion
           </label>
-          <select
-            id="occasion"
-            style={{
-              height: "3vw",
-              borderRadius: "10px",
-              border: "3px solid black",
-              paddingLeft: "15px",
-              fontWeight: "bolder",
-            }}
-          >
+          <select id="occasion" className="res_ip">
             <option>Birthday</option>
             <option>Anniversary</option>
           </select>
@@ -99,15 +112,7 @@ const BookingForm = () => {
           <input
             type="submit"
             value="Make Your reservation"
-            style={{
-              height: "3vw",
-              borderRadius: "10px",
-              border: "3px solid black",
-              color:"white",
-              backgroundColor: "#3d4a40",
-              marginTop: "25px",
-              fontWeight: "bold",
-            }}
+            className="res_but"
           ></input>
         </form>
       </div>

@@ -1,45 +1,54 @@
 import React from "react";
-import "../CSS/nav.css"
-import logo from "../assets/logo.png"
+import "../CSS/nav.css";
+import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
 
-const Navbar=()=>{
-
-return (
+const Navbar = () => {
+  return (
     <>
-    <div id="nav_body">
-        <div class="img_div">
-        <Link to="/"><img id="img_body" src={logo} /></Link>
-        
+      <div id="nav_body">
+        <div className="img_div">
+          <Link to="/">
+            <img id="img_body" src={logo} />
+          </Link>
         </div>
-        <div class="img_div">
-        <ul id="nav_body_ul">
+        <div className="img_div">
+          <ul id="nav_body_ul">
             <li>
-                <Link to="/" className="link_class">Home</Link>
+              <Link to="/" className="link_class">
+                Home
+              </Link>
             </li>
             <li>
-            <Link to="/" className="link_class">About</Link>
+              <Link to="/" className="link_class">
+                About
+              </Link>
             </li>
             <li>
-            <Link to="/" className="link_class">Menu</Link>
+              <Link to="/" className="link_class">
+                Menu
+              </Link>
             </li>
             <li>
-            <Link to="/booking_table" className="link_class">Reservations</Link>
+              <Link to="/booking_table" className="link_class">
+                Reservations
+              </Link>
             </li>
             <li>
-            <Link to="/" className="link_class">Order Online</Link>
+              <Link to="/" className="link_class">
+                Order Online
+              </Link>
             </li>
             <li>
-            <Link to="/" className="link_class">Login</Link>
+              <Link to="/check" className="link_class">
+                Login
+              </Link>
             </li>
-        </ul>
+          </ul>
         </div>
-        </div>
-
-
+      </div>
     </>
-)
-
-}
+  );
+};
 
 export default Navbar;
