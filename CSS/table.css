@@ -32,6 +32,7 @@
         border: 3px solid black;
         padding-left: 15px;
         font-weight: bolder;
+        width:33vw;
 }
 
 .res_but{
@@ -53,4 +54,11 @@
     color: #F4CE14;
     border: 5px solid black;
     width: 25vw;
+}
+
+.error_msg{
+    color:red;
+    font-size: medium;
+    margin-top: 0px;
+    margin-bottom: 0px;;
 }
