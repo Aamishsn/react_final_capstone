@@ -27,13 +27,33 @@ const BookingForm = () => {
   const [isGuestFocus, setIsGuestFocus] = useState(true);
   const [isSubmit, setIsSubmit]=useState();
   const [selectedTime, setSelectedTime]=useState("Select Time...");
+  const [selectedTimeOption, setSelectedTimeOption]=useState("");
+  const [isTime, setIsTime]=useState(false);
+  const [isTimeFocus, setisTimeFocus]=useState(true);
   const [selectedOcassion, setSelectedOcassion]=useState("Select Ocassion");
+  const [isOcassion, setIsOcassion]=useState(false);
+  const [isOcassionFocus, setIsOcassionFocus]=useState(true);
+  const [selectOcassion, setSelectOcassions]=useState("");
   
+  
+
+
 const occasionHandler=(e)=>{
   setSelectedOcassion(e.target.value)
+  setSelectOcassions(e.target.value)
+  setIsOcassion(e.target.value=="Select Ocassion" ? false:true)
+}
+const ocassionBlur=()=>{
+  setIsOcassionFocus(false);
 }
   const timeHandler=(e)=>{
     setSelectedTime(e.target.value)
+    setSelectedTimeOption(e.target.value)
+  setIsTime(e.target.value=="Select Time..." ? false:true)
+  }
+
+  const timeBlur=()=>{
+    setisTimeFocus(false);
   }
 
   const onCHange_name = (e) => {
@@ -79,8 +99,8 @@ const occasionHandler=(e)=>{
   }
   const handleSubmit = (e) => {
       e.preventDefault();
-      setIsSubmit(isName&&isEmail&&valDate&&isGuest);
-      (isName&&isEmail&&valDate&&isGuest) ? navigate("/table/confirm") :alert("Please Fill All The Fields Correctly");
+      setIsSubmit(isName&&isEmail&&valDate&&isGuest&&isTime&&isOcassion);
+      (isName&&isEmail&&valDate&&isGuest&&isTime&&isOcassion) ? navigate("/table/confirm") :alert("Please Fill All The Fields Correctly");
       
   };
 
@@ -159,11 +179,13 @@ const occasionHandler=(e)=>{
             Choose time:
           </label>
           <div>
-          <select id="res-time " className="res_ip2" disabled={!valDate} onChange={timeHandler} value={selectedTime}>
+          <select id="res-time " className="res_ip2" disabled={!valDate} onBlur={timeBlur} onChange={timeHandler} value={selectedTime}>
             <option disabled> Select Time...</option>
             {options}
           </select>
-          
+          {!isTime && !isTimeFocus && (
+              <p className="error_msg"> * Please Enter a valid Time</p>
+            )}
           </div>
           <label
             htmlFor="guests"
@@ -190,12 +212,16 @@ const occasionHandler=(e)=>{
           <label htmlFor="occasion" style={{ fontWeight: "bold" }}>
             Occasion
           </label>
-          <select id="occasion" className="res_ip2" onChange={occasionHandler} value={selectedOcassion}>
+          <div>
+          <select id="occasion" className="res_ip2" onChange={occasionHandler} onBlur={ocassionBlur} value={selectedOcassion}>
             <option disabled>Select Ocassion</option>
             <option>Birthday</option>
             <option>Anniversary</option>
           </select>
-
+          {!isOcassion && !isOcassionFocus && (
+              <p className="error_msg"> * Please Enter a valid Time</p>
+            )}
+          </div>
 
           
           <div style={{marginLeft:"auto",marginRight:"auto"}}>
