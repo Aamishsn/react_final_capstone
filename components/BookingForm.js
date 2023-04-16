@@ -2,17 +2,19 @@ import React from "react";
 import "../CSS/table.css";
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import { useFormContext } from "../context/FormContext";
 
-const availableTimes = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+const initialavailableTimes = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
 
 const BookingForm = () => {
   const navigate = useNavigate();
-  
+  const [availableTimes, setAvailableTimes]=useState(initialavailableTimes);
+  const formContext = useFormContext();
 
   const options = availableTimes.map((items) => {
     return <option>{items}</option>;
   });
-
+  
   const [name, setName] = useState("PLease Enter Full Name");
   const [isName, setIsName] = useState(false);
   const [isNameFocus, setIsNameFocus] = useState(true);
@@ -25,7 +27,6 @@ const BookingForm = () => {
   const [guestNumber, setguestNumber] = useState("");
   const [isGuest, setIsGuest] = useState(false);
   const [isGuestFocus, setIsGuestFocus] = useState(true);
-  const [isSubmit, setIsSubmit]=useState();
   const [selectedTime, setSelectedTime]=useState("Select Time...");
   const [selectedTimeOption, setSelectedTimeOption]=useState("");
   const [isTime, setIsTime]=useState(false);
@@ -99,10 +100,22 @@ const ocassionBlur=()=>{
   }
   const handleSubmit = (e) => {
       e.preventDefault();
-      setIsSubmit(isName&&isEmail&&valDate&&isGuest&&isTime&&isOcassion);
-      (isName&&isEmail&&valDate&&isGuest&&isTime&&isOcassion) ? navigate("/table/confirm") :alert("Please Fill All The Fields Correctly");
+      (isName&&isEmail&&valDate&&isGuest&&isTime&&isOcassion) ? finalFunction() :alert("Please Fill All The Fields Correctly");
+      
       
   };
+
+  const finalFunction = ()=>{
+    navigate("/table/confirm")
+    formContext.setForm({
+      name: name,
+      email: ip_email,
+      date: selectedDate.toLocaleDateString(),
+      time: selectedTime,
+      guests: guestNumber,
+      occasion: selectedOcassion,
+    })
+  }
 
 
   return (
