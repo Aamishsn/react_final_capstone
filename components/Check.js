@@ -6,15 +6,14 @@ function Check() {
   function addItem() {
     setItems([...items, "New Item"]);
   }
-
+  const miles = 100;
+  const conversionFactor = 1.7;
   return (
     <div>
-      <button onClick={addItem}>Add Item</button>
-      <ul>
-        {items.map((item, index) => (
-          <li key={index}>{item}</li>
-        ))}
-      </ul>
+           <p>The distance is {miles * conversionFactor}km.</p>
+
+
+export default Greeter;
     </div>
   );
 }

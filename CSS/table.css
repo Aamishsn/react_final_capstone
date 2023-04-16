@@ -2,6 +2,7 @@
     display: grid;
     grid-template-rows: 1fr;
     height: 70vw;
+    width:45vx;
     justify-content: center;
     font-family: 'Mezaraki';
     font-size: 1.5vw;
@@ -19,31 +20,32 @@
 #res_main{
         background-color: #F4CE14;
         width: 40vw;
+        height: auto;
         display: grid;
         grid-template-columns: 1fr;
         justify-items: center;
-        margin-top: 10px;
+        margin-top: 1vw;
         border-radius: 16px;
 }
 
 .res_ip {
+        width:33vw;
         height: 3vw;
         border-radius: 16px;
         border: 3px solid black;
         padding-left: 15px;
         font-weight: bolder;
-        width:33vw;
+        
+        font-size: 1vw;
 }
 
 .res_but{
         height: 3vw;
         border-radius: 16px;
         border: 3px solid black;
-        padding-left: 15px;
+        font-size: 1vw;
         font-weight: bolder;
         margin-top: 2vw;
-        margin-left: auto;
-        margin-right: auto;
         background-color: #3d4a40;
         color: white;
         width: 20vw;
@@ -51,6 +53,7 @@
 }
 
 .res_but:hover{
+    
     color: #F4CE14;
     border: 5px solid black;
     width: 25vw;
@@ -58,7 +61,17 @@
 
 .error_msg{
     color:red;
-    font-size: medium;
+    font-size: 1vw;
     margin-top: 0px;
     margin-bottom: 0px;;
+}
+
+.res_ip2 {
+    font-size: 1vw;
+    height: 3.3vw;
+    border-radius: 16px;
+    border: 3px solid black;
+    padding-left: 15px;
+    font-weight: bolder;
+    width:34vw;
 }
